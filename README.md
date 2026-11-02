@@ -98,7 +98,7 @@ At each vertex, the back edges ending at that vertex must be arranged consecutiv
     Graph with 4 vertices and 6 edges is PLANAR.
     ```
 
-  - Non-planar Graph
+- Non-planar Graph
       
     Edges: `9`
 
