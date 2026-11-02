@@ -22,9 +22,8 @@ The algorithm runs the DFS twice. The first pass measures how far up the tree ea
 - ### SAMPLE INPUTS
 
   - Planar Graph
-    
-   Edges: `8`
 
+    Edges: `8`
     ```    
     Edge 1: 0 1
     Edge 2: 1 2
@@ -36,7 +35,7 @@ The algorithm runs the DFS twice. The first pass measures how far up the tree ea
     Edge 8: 2 5
     ```
 
-  RESULT:
+    RESULT:
     ```
     The graph is PLANAR (left-right constraints are consistent).
     ```
@@ -58,7 +57,7 @@ The algorithm runs the DFS twice. The first pass measures how far up the tree ea
     Edge 10: 4 5
     ```
 
-  RESULT:
+    RESULT:
     ```
     The graph is NON-PLANAR (left-right constraints conflict).
     ```
@@ -81,7 +80,7 @@ At each vertex, the back edges ending at that vertex must be arranged consecutiv
 
 - ### SAMPLE INPUTS
 
-- Planar Graph
+  - Planar Graph
     
     Edges: `6`
     ```
@@ -98,7 +97,7 @@ At each vertex, the back edges ending at that vertex must be arranged consecutiv
     Graph with 4 vertices and 6 edges is PLANAR.
     ```
 
-- Non-planar Graph
+  - Non-planar Graph
       
     Edges: `9`
 
