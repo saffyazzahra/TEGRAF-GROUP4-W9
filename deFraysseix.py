@@ -33,7 +33,7 @@ def check_planarity_dfr(graph, all_nodes=None):
     if all_nodes is None:
         all_nodes = list(graph.keys())
 
-    # remove self-loops and parallel edges,, auto nonplanar
+    # remove self-loops and parallel edges
     adj = {n: set() for n in all_nodes}
     for u, neighbors in graph.items():
         for v in neighbors:
