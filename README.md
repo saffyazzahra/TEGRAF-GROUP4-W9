@@ -118,4 +118,4 @@ At each vertex, the back edges ending at that vertex must be arranged consecutiv
 ## AI USAGE DISCLOSURE
 
 - de Fraysseix–Rosenstiehl Criterion : https://share.gemini.google/r6mbxHnmqEIj
-- Shih-Hsu Algorithm : 
+- Shih-Hsu Algorithm : https://claude.ai/share/30b20437-9705-493e-bba9-1dc1ced0db21
