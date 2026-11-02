@@ -122,3 +122,4 @@ At each vertex, the back edges ending at that vertex must be arranged consecutiv
 
 - de Fraysseix–Rosenstiehl Criterion : https://share.gemini.google/r6mbxHnmqEIj
 - Shih-Hsu Algorithm : https://claude.ai/share/30b20437-9705-493e-bba9-1dc1ced0db21
+- Recheck: https://claude.ai/share/e30d4cc6-3578-418f-bd17-500162b64fbb
