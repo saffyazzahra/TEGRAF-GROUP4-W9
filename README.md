@@ -17,7 +17,7 @@ The algorithm runs the DFS twice. The first pass measures how far up the tree ea
 - ### RUNNING THE CODE
 
   - Input the number of edges in the desired graph
-  - Input the adjacency list of each edge
+  - Input the edge list
  
 - ### SAMPLE INPUTS
 
@@ -76,7 +76,7 @@ At each vertex, the back edges ending at that vertex must be arranged consecutiv
 - ### RUNNING THE CODE
 
   - Input the number of edges in the desired graph
-  - Input the adjacency list of each edge
+  - Input the edge list
 
 - ### SAMPLE INPUTS
 
