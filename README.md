@@ -6,13 +6,13 @@
 |Nisrina Zahralilla|5025251013|
 |Safiya Nadira Az-zahra|5025251268|
 
-## de Fraysseix–Rosenstiehl Criterion 
+## Left-Right de Fraysseix–Rosenstiehl Criterion 
 
 - ### BRIEF ALGORITHM EXPLANATION
 
-The de Fraysseix (DFR) algorithm determines if a graph can be drawn without any crossing lines by organizing it into a Depth-First Search (DFS) tree. It separates the connections into main tree pathways and loop-like back-edges, seeing whether these loops can be neatly sorted into two opposing sides without crossing.
+The algorithm uses the Left-Right planarity test of Brandes, which is built on the de Fraysseix-Rosenstiehl criterion. The idea is to walk through the graph with a DFS, which creates a tree, and then look at the leftover edges that jump back up to an earlier node (back edges). If the graph is planar, every back edge can be drawn either to the left or to the right of the tree without crossing another one. Before starting, the code removes self-loops and duplicate edges. It also rejects any graph with more than 3n-6 edges (Eulers formula), because a planar graph can never have that many.
 
-To solve this, the algorithm builds a "conflict graph" where each loop becomes a node, and connections are drawn between any loops that overlap or conflict with each other. If this conflict graph can be cleanly split into two separate groups, then a valid layout exists and the graph is planar; otherwise, it's non-planar.
+The algorithm runs the DFS twice. The first pass measures how far up the tree each edge can reach, and uses that to put the edges in an order where small inner loops are handled before the bigger loops around them. The second pass goes through the edges in that order and keeps a stack of “these edges must be on opposite sides” rules. Whenever two back edges would cross, the rule forces them onto different sides. If some edge ends up forced onto both sides at once, there is no way to avoid a crossing, so the graph is non-planar. If every edge gets a side without a contradiction, the graph is planar.
 
 - ### RUNNING THE CODE
 
@@ -23,40 +23,44 @@ To solve this, the algorithm builds a "conflict graph" where each loop becomes a
 
   - Planar Graph
     
-    Edges: `6`
-    ```
+   Edges: `8`
+
+    ```    
     Edge 1: 0 1
-    Edge 2: 0 2
-    Edge 3: 0 3
-    Edge 4: 1 2
-    Edge 5: 1 3
-    Edge 6: 2 3
+    Edge 2: 1 2
+    Edge 3: 2 3
+    Edge 4: 3 4
+    Edge 5: 4 5
+    Edge 6: 0 3
+    Edge 7: 1 4
+    Edge 8: 2 5
     ```
 
-    RESULT:
+  RESULT:
     ```
-    The graph is PLANAR (Conflict graph is bipartite).
+    The graph is PLANAR (left-right constraints are consistent).
     ```
 
   - Non-planar Graph
       
-    Edges: `9`
+    Edges: `10`
 
     ```    
-    Edge 1: 0 3
-    Edge 2: 0 4
-    Edge 3: 0 5
-    Edge 4: 1 3
-    Edge 5: 1 4
-    Edge 6: 1 5
-    Edge 7: 2 3
+    Edge 1: 0 1
+    Edge 2: 0 2
+    Edge 3: 0 3
+    Edge 4: 0 5
+    Edge 5: 1 2
+    Edge 6: 1 3
+    Edge 7: 1 5
     Edge 8: 2 4
-    Edge 9: 2 5
+    Edge 9: 3 4
+    Edge 10: 4 5
     ```
 
-    RESULT:
+  RESULT:
     ```
-     The graph is NON-PLANAR (Conflict graph is not bipartite).
+    The graph is NON-PLANAR (left-right constraints conflict).
     ```
 
 
